@@ -3,20 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Гамаюн — гончарная мастерская и пространство для творчества." />
+    <meta name="description" content="Гамаюн — гончарная мастерская и пространство для творчества в Смоленске." />
     <title>Гамаюн — гончарная мастерская</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
-      <a class="logo" href="#top" aria-label="Гамаюн — на главную">Гамаюн</a>
+      <a class="logo" href="#top" aria-label="Гамаюн — на главную">
+        <span class="logo-symbol">Г</span>
+        <span>Гамаюн</span>
+      </a>
+
       <nav class="main-nav" aria-label="Основная навигация">
         <a href="#workshops">Мастер-классы</a>
         <a href="#about">О студии</a>
         <a href="#shop">Магазин</a>
         <a href="#contacts">Контакты</a>
       </nav>
-      <button class="header-booking" type="button" data-scroll-to="workshops">Записаться</button>
+
+      <div class="header-actions">
+        <button class="header-login" type="button" data-action="login">Войти</button>
+        <button class="header-booking" type="button" data-scroll-to="workshops">Записаться</button>
+      </div>
       <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">☰</button>
     </header>
 
@@ -24,17 +35,22 @@
       <section class="hero">
         <div class="hero-content">
           <p class="eyebrow">Гончарная мастерская · Смоленск</p>
-          <h1>Место, где можно<br /><em>создать своё.</em></h1>
-          <p class="hero-text">Лепим, крутим, глазуруем и просто хорошо проводим время в мире керамики.</p>
+          <h1>Создавайте<br /><em>своими руками.</em></h1>
+          <p class="hero-text">Гамаюн — место, где глина превращается в вещи, а обычный вечер — в маленькое приключение.</p>
           <div class="hero-actions">
-            <button class="primary-button" type="button" data-scroll-to="workshops">Выбрать мастер-класс</button>
-            <a class="text-link" href="#about">Узнать о Гамаюне ↓</a>
+            <button class="primary-button" type="button" data-scroll-to="workshops">Выбрать мастер-класс <span>↗</span></button>
+            <a class="text-link" href="#about">О студии <span>↓</span></a>
           </div>
         </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="pot pot-large"></div>
-          <div class="pot pot-small"></div>
-          <span class="hero-mark">Г</span>
+
+        <div class="hero-visual" aria-label="Керамика в студии">
+          <div class="hero-image-placeholder">
+            <div class="ceramic-vessel vessel-main"></div>
+            <div class="ceramic-vessel vessel-side"></div>
+            <div class="clay-circle"></div>
+            <span class="visual-note">made<br />by hand</span>
+          </div>
+          <div class="hero-caption"><span>01</span><span>Керамика · люди · пространство</span></div>
         </div>
       </section>
 
@@ -87,10 +103,7 @@
 
       <section class="shop-preview section" id="shop">
         <div class="section-heading">
-          <div>
-            <p class="eyebrow">Магазин</p>
-            <h2>Вещи, сделанные<br />в Гамаюне</h2>
-          </div>
+          <div><p class="eyebrow">Магазин</p><h2>Вещи, сделанные<br />в Гамаюне</h2></div>
           <button class="outline-button" type="button" data-action="shop">Смотреть всё</button>
         </div>
         <div class="shop-grid">
@@ -102,16 +115,8 @@
       </section>
 
       <section class="contact-section section" id="contacts">
-        <div>
-          <p class="eyebrow">Приходите в гости</p>
-          <h2>Гамаюн<br />ждёт вас.</h2>
-        </div>
-        <div class="contact-details">
-          <p>Смоленск</p>
-          <p>Адрес студии появится здесь</p>
-          <p>Ежедневно · по расписанию мастер-классов</p>
-          <a href="tel:+70000000000">+7 000 000-00-00</a>
-        </div>
+        <div><p class="eyebrow">Приходите в гости</p><h2>Гамаюн<br />ждёт вас.</h2></div>
+        <div class="contact-details"><p>Смоленск</p><p>Адрес студии появится здесь</p><p>Ежедневно · по расписанию мастер-классов</p><a href="tel:+70000000000">+7 000 000-00-00</a></div>
       </section>
     </main>
 
