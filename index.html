@@ -1,35 +1,53 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Гамаюн — керамическая студия в Смоленске." />
-    <title>Гамаюн — керамическая студия</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=4" />
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="logo" href="#top" aria-label="Гамаюн — на главную"><img src="logo.jpg" alt="Гамаюн — керамическая студия" /></a>
-      <nav class="main-nav" aria-label="Основная навигация">
-        <a href="#workshops">Мастер-классы</a><a href="#about">О студии</a><a href="#shop">Магазин</a><a href="#contacts">Контакты</a>
-      </nav>
-      <div class="header-actions"><button class="header-login" type="button" data-action="login">Войти</button><button class="header-booking" type="button" data-scroll-to="workshops">Записаться</button></div>
-      <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">☰</button>
-    </header>
-    <main id="top">
-      <section class="hero">
-        <div class="hero-content"><p class="eyebrow">Керамическая студия · Смоленск</p><h1>Создавайте<br /><em>своими руками.</em></h1><p class="hero-text">Гамаюн — пространство для творчества, встреч и вещей, которые хочется оставить себе.</p><div class="hero-actions"><button class="primary-button" type="button" data-scroll-to="workshops">Выбрать мастер-класс <span>↗</span></button><a class="text-link" href="#about">О студии <span>↓</span></a></div></div>
-        <div class="hero-visual"><div class="hero-image-placeholder"><div class="ceramic-vessel vessel-main"></div><div class="ceramic-vessel vessel-side"></div><div class="clay-circle"></div><span class="visual-note">made<br />by hand</span></div><div class="hero-caption"><span>01</span><span>Керамика · люди · пространство</span></div></div>
-      </section>
-      <section class="intro section" id="about"><div><p class="eyebrow">Гамаюн</p><h2>Керамика руками.<br />Впечатления — надолго.</h2></div><p class="section-lead">Студия для тех, кто хочет попробовать керамику, научиться новому или просто провести время за творчеством.</p></section>
-      <section class="section workshops" id="workshops"><div class="section-heading"><div><p class="eyebrow">Расписание</p><h2>Мастер-классы</h2></div><button class="outline-button" type="button" data-action="calendar">Открыть календарь</button></div><div class="workshop-grid"><article class="workshop-card"><div class="card-image card-image-wheel"><span>01</span></div><div class="card-body"><p class="card-meta">Гончарный круг · 2 часа</p><h3>Первое знакомство с кругом</h3><p>Создадим изделие с нуля и разберём основные приёмы работы.</p><div class="card-footer"><strong>от 2 500 ₽</strong><button type="button" data-action="book" data-workshop="Первое знакомство с кругом">Записаться</button></div></div></article><article class="workshop-card"><div class="card-image card-image-clay"><span>02</span></div><div class="card-body"><p class="card-meta">Лепка · 2 часа</p><h3>Керамика своими руками</h3><p>Спокойный творческий вечер, где можно лепить в своём темпе.</p><div class="card-footer"><strong>от 2 000 ₽</strong><button type="button" data-action="book" data-workshop="Керамика своими руками">Записаться</button></div></div></article><article class="workshop-card"><div class="card-image card-image-glaze"><span>03</span></div><div class="card-body"><p class="card-meta">Глазуровка · 1,5 часа</p><h3>Цвет и форма</h3><p>Выбираем глазури и превращаем готовую керамику в свою вещь.</p><div class="card-footer"><strong>от 1 800 ₽</strong><button type="button" data-action="book" data-workshop="Цвет и форма">Записаться</button></div></div></article></div></section>
-      <section class="shop-preview section" id="shop"><div class="section-heading"><div><p class="eyebrow">Магазин</p><h2>Вещи, сделанные<br />в Гамаюне</h2></div><button class="outline-button" type="button" data-action="shop">Смотреть всё</button></div><div class="shop-grid"><article class="product-card"><div class="product-art product-art-1"></div><p>Кружка «Утро»</p><strong>1 900 ₽</strong></article><article class="product-card"><div class="product-art product-art-2"></div><p>Ваза «Земля»</p><strong>3 500 ₽</strong></article><article class="product-card"><div class="product-art product-art-3"></div><p>Тарелка «Линия»</p><strong>2 200 ₽</strong></article><article class="product-card"><div class="product-art product-art-4"></div><p>Подсвечник «Дом»</p><strong>1 400 ₽</strong></article></div></section>
-      <section class="contact-section section" id="contacts"><div><p class="eyebrow">Приходите в гости</p><h2>Гамаюн<br />ждёт вас.</h2></div><div class="contact-details"><p>Смоленск</p><p>Адрес студии появится здесь</p><p>Ежедневно · по расписанию мастер-классов</p><a href="tel:+70000000000">+7 000 000-00-00</a></div></section>
-    </main>
-    <footer class="site-footer"><span>© Гамаюн</span><span>Керамическая студия</span><span>Смоленск</span></footer>
-    <div class="toast" role="status" aria-live="polite"></div><script src="script.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Гамаюн — керамическая студия в Смоленске.">
+  <title>Гамаюн — керамическая студия</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=5">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav nav-left" aria-label="Основная навигация">
+      <a href="#workshops">Мастер-классы</a><a href="#about">О студии</a><a href="#shop">Магазин</a>
+    </nav>
+    <a class="logo" href="#top" aria-label="Гамаюн — на главную"><img src="gamayun-logo.png" alt="Гамаюн — керамическая студия"></a>
+    <nav class="nav nav-right" aria-label="Дополнительная навигация">
+      <a href="#gallery">Галерея</a><a href="#contacts">Контакты</a><button class="login-link" type="button" data-action="login">Войти</button><button class="booking-outline" type="button" data-scroll-to="workshops">Записаться</button>
+    </nav>
+    <button class="menu-toggle" type="button" aria-label="Меню" aria-expanded="false">☰</button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Керамическая студия Гамаюн</p>
+        <h1>Керамика,<br>научиться новому<br>или просто<br>провести время<br>за творчеством.</h1>
+        <p class="hero-subtitle">Место, где создаются тёплые вещи<br>и рождается вдохновение.</p>
+        <div class="hero-actions"><button class="booking-solid" type="button" data-scroll-to="workshops">Записаться на мастер-класс</button><a class="learn-link" href="#about">Узнать больше</a></div>
+      </div>
+      <div class="hero-photo" role="img" aria-label="Керамические изделия ручной работы"></div>
+    </section>
+
+    <section class="feature-strip" aria-label="О студии">
+      <article><span class="feature-icon">◌</span><div><h2>Мастер-классы</h2><p>Занятия для любого уровня под руководством мастера.</p></div></article>
+      <article><span class="feature-icon">♧</span><div><h2>Уютная атмосфера</h2><p>Тёплое пространство, где хочется творить и отдыхать.</p></div></article>
+      <article><span class="feature-icon">⌁</span><div><h2>Ручная работа</h2><p>Создаём керамику с душой и вниманием к деталям.</p></div></article>
+      <article><span class="feature-icon">□</span><div><h2>Магазин</h2><p>Авторская керамика для вас и вашего дома.</p></div></article>
+    </section>
+
+    <section class="simple-section" id="about"><p class="eyebrow">Гамаюн</p><h2>Здесь можно остановиться<br>и сделать что-то руками.</h2></section>
+    <section class="simple-section" id="workshops"><p class="eyebrow">Расписание</p><h2>Мастер-классы</h2><button class="booking-solid" type="button" data-action="calendar">Открыть календарь</button></section>
+    <section class="simple-section" id="shop"><p class="eyebrow">Магазин</p><h2>Керамика, которую<br>хочется забрать домой.</h2></section>
+    <section class="simple-section" id="gallery"><p class="eyebrow">Галерея</p><h2>Пространство Гамаюна</h2></section>
+    <section class="contact-section" id="contacts"><p class="eyebrow">Приходите в гости</p><h2>Гамаюн ждёт вас.</h2><p>Смоленск · адрес студии добавим позже</p></section>
+  </main>
+  <footer class="site-footer"><span>© Гамаюн</span><span>Керамическая студия</span><span>Смоленск</span></footer>
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
 </html>
