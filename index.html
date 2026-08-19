@@ -1,74 +1,27 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Гамаюн — керамическая студия.">
-  <title>Гамаюн — керамическая студия</title>
-  <link rel="stylesheet" href="styles.css?v=2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Гамаюн — керамическая студия</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav nav-left" aria-label="Основная навигация">
-      <a href="#workshops">Мастер-классы</a>
-      <a href="#about">О студии</a>
-      <a href="#shop">Магазин</a>
-    </nav>
-
-    <a class="logo" href="#top" aria-label="Гамаюн">
-      <span class="logo-mark">ГАМАЮН</span>
-      <span class="logo-caption">Керамическая студия</span>
-    </a>
-
-    <nav class="nav nav-right" aria-label="Дополнительная навигация">
-      <a href="#gallery">Галерея</a>
-      <a href="#contacts">Контакты</a>
-      <a href="#login">Войти</a>
-    </nav>
-  </header>
-
-  <main id="top">
-    <section class="hero">
-      <div class="hero-copy">
-        <h1>Керамика,<br>научиться новому<br>или просто<br>провести время<br>за творчеством.</h1>
-        <p class="hero-subtitle">Место, где создаются тёплые вещи и рождается вдохновение.</p>
-        <div class="hero-actions">
-          <a class="booking" href="#workshops">Записаться на мастер-класс</a>
-          <a class="learn" href="#about">Узнать больше</a>
-        </div>
-      </div>
-      <div class="hero-image" aria-label="Фотография керамики"></div>
-    </section>
-
-    <section class="features" aria-label="О студии">
-      <article class="feature">
-        <div class="feature-icon">◌</div>
-        <h2>Мастер-классы</h2>
-        <p>Занятия для любого уровня</p>
-      </article>
-      <article class="feature">
-        <div class="feature-icon">♧</div>
-        <h2>Уютная атмосфера</h2>
-        <p>Тёплое пространство</p>
-      </article>
-      <article class="feature">
-        <div class="feature-icon">⌁</div>
-        <h2>Ручная работа</h2>
-        <p>Керамика с душой</p>
-      </article>
-      <article class="feature">
-        <div class="feature-icon">□</div>
-        <h2>Магазин</h2>
-        <p>Авторская керамика</p>
-      </article>
-    </section>
-
-    <section id="about"></section>
-    <section id="workshops"></section>
-    <section id="shop"></section>
-    <section id="gallery"></section>
-    <section id="contacts"></section>
-    <section id="login"></section>
-  </main>
-</body>
-</html>
+<header class="header">
+  <a class="brand" href="#"><span class="brand-mark">◜</span><span><strong>Г А М А Ю Н</strong><small>КЕРАМИЧЕСКАЯ СТУДИЯ</small></span></a>
+  <nav><a href="#workshops">Мастер-классы</a><a href="#studio">О студии</a><a href="#shop">Магазин</a><a href="#gallery">Галерея</a><a href="#contacts">Контакты</a></nav>
+  <div class="actions"><a href="#login">Войти</a><a class="header-btn" href="#booking">Записаться</a></div>
+</header>
+<main>
+<section class="hero"><div class="hero-copy"><div class="eyebrow">КЕРАМИЧЕСКАЯ СТУДИЯ ГАМАЮН</div><h1>Керамика,<br>научиться новому<br>или просто провести<br>время за творчеством.</h1><p>Место, где создаются тёплые вещи<br>и рождается вдохновение.</p><div class="buttons"><a class="btn primary" href="#booking">Записаться на мастер-класс</a><a class="btn secondary" href="#studio">Узнать больше</a></div></div><div class="hero-photo" aria-label="Керамика"></div></section>
+<section class="features" id="workshops">
+<article><div class="icon">♧</div><div><h2>МАСТЕР-КЛАССЫ</h2><p>Занятия для любого уровня под руководством мастера.</p><a href="#booking">Подробнее →</a></div></article>
+<article><div class="icon">♢</div><div><h2>УЮТНАЯ АТМОСФЕРА</h2><p>Тёплое пространство, где хочется творить и отдыхать.</p><a href="#studio">Подробнее →</a></div></article>
+<article><div class="icon">⌁</div><div><h2>РУЧНАЯ РАБОТА</h2><p>Создаём керамику с душой и вниманием к деталям.</p><a href="#gallery">Подробнее →</a></div></article>
+<article><div class="icon">⌂</div><div><h2>МАГАЗИН</h2><p>Авторская керамика для вас и вашего дома.</p><a href="#shop">Перейти в магазин →</a></div></article>
+</section>
+<section class="studio" id="studio"><div><div class="eyebrow">О СТУДИИ</div><h2>Пространство,<br>где можно создавать.</h2><p>Спокойная атмосфера, натуральные материалы и керамика, которую хочется держать в руках.</p></div><div class="studio-card"></div></section>
+<section class="booking" id="booking"><div><div class="eyebrow">ЗАПИСЬ</div><h2>Выберите занятие<br>и приходите творить.</h2></div><a class="btn primary" href="mailto:hello@gamayun.studio">Записаться</a></section>
+</main>
+<footer id="contacts"><span>ГАМАЮН</span><span>Керамическая студия</span><span>© 2026</span></footer>
+</body></html>
