@@ -8,14 +8,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=20260825-9">
+    <link rel="stylesheet" href="css/style.css?v=20260825-10">
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="index.html" aria-label="Гамаюн Керамика, главная">Гамаюн <span>Керамика</span></a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Меню</button>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
       <nav id="site-nav" class="site-nav" aria-label="Основная навигация">
         <a href="#directions">Направления</a>
+        <a href="#shop">Магазин</a>
         <a href="#studio">О студии</a>
         <a href="#contacts">Контакты</a>
         <a class="button button-small" href="booking.html">Записаться</a>
@@ -64,7 +67,7 @@
         <div class="section-heading shop-heading"><div><p class="eyebrow">Авторские вещи</p><h2>Интернет-магазин<br><em>керамических изделий</em></h2></div><p class="shop-intro">Небольшие серии и предметы в единственном экземпляре. Все изделия созданы вручную в нашей мастерской.</p></div>
         <div class="shop-filters" role="group" aria-label="Категории изделий"><button class="is-active" type="button" data-filter="all">Все</button><button type="button" data-filter="vases">Вазы</button><button type="button" data-filter="mugs">Кружки</button><button type="button" data-filter="candles">Свечки</button><button type="button" data-filter="plates">Тарелки</button><button type="button" data-filter="decor">Декоративные</button><button type="button" data-filter="sale">Распродажа</button></div>
         <div class="product-grid" aria-live="polite">
-          <article class="product-card" data-category="vases"><div class="product-image"><img src="https://images.unsplash.com/photo-1608467976337-3ec5a6e534c3?auto=format&fit=crop&w=800&q=80" alt="Керамическая ваза Молоко" loading="lazy"></div><div><h3>Ваза «Молоко»</h3><p>3 900 ₽</p></div></article>
+          <article class="product-card" data-category="vases"><div class="product-image"><img src="images/shop-vase-moloko.png" alt="Керамическая ваза Молоко" loading="lazy"></div><div><h3>Ваза «Молоко»</h3><p>3 900 ₽</p></div></article>
           <article class="product-card" data-category="mugs"><div class="product-image"><img src="https://images.unsplash.com/photo-1772453609632-2f4aa857f56e?auto=format&fit=crop&w=800&q=80" alt="Керамическая кружка Берег" loading="lazy"></div><div><h3>Кружка «Берег»</h3><p>1 800 ₽</p></div></article>
           <article class="product-card" data-category="plates"><div class="product-image"><img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=800&q=80" alt="Керамическая тарелка Лён" loading="lazy"></div><div><h3>Тарелка «Лён»</h3><p>2 600 ₽</p></div></article>
           <article class="product-card" data-category="candles"><div class="product-image"><img src="https://images.unsplash.com/photo-1678296728930-775d299daaca?auto=format&fit=crop&w=800&q=80" alt="Керамический подсвечник Тень" loading="lazy"></div><div><h3>Подсвечник «Тень»</h3><p>1 500 ₽</p></div></article>
@@ -113,6 +116,6 @@
       <div><a href="tel:+79000000000">+7 900 000-00-00</a><br><a href="mailto:hello@gamayun-ceramics.ru">hello@gamayun-ceramics.ru</a></div>
       <p class="footer-note">Данные для связи временные — замените перед публикацией. <a href="admin.html">Админка (демо)</a></p>
     </footer>
-    <script src="js/main.js?v=20260825-3"></script>
+    <script src="js/main.js?v=20260825-5"></script>
   </body>
 </html>
