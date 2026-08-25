@@ -5,6 +5,14 @@ if (menuButton && navigation) {
   menuButton.addEventListener('click', () => {
     const isOpen = navigation.classList.toggle('is-open');
     menuButton.setAttribute('aria-expanded', String(isOpen));
+    menuButton.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
+  });
+
+  navigation.addEventListener('click', (event) => {
+    if (!event.target.closest('a')) return;
+    navigation.classList.remove('is-open');
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', 'Открыть меню');
   });
 }
 
@@ -27,7 +35,7 @@ const shopGrid = document.querySelector('.product-grid');
 const filterButtons = document.querySelectorAll('[data-filter]');
 
 const shopImages = {
-  vases: 'https://images.unsplash.com/photo-1608467976337-3ec5a6e534c3?auto=format&fit=crop&w=800&q=80',
+  vases: 'images/shop-vase-moloko.png',
   mugs: 'https://images.unsplash.com/photo-1772453609632-2f4aa857f56e?auto=format&fit=crop&w=800&q=80',
   candles: 'https://images.unsplash.com/photo-1678296728930-775d299daaca?auto=format&fit=crop&w=800&q=80',
   plates: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=800&q=80',
@@ -65,7 +73,7 @@ filterButtons.forEach((button) => {
 /* The vase collection has its own 20-image catalogue and progressive loading. */
 const loadMoreButton = document.querySelector('.load-more');
 const vaseImages = [
-  'https://images.unsplash.com/photo-1608467976337-3ec5a6e534c3?auto=format&fit=crop&w=800&q=80',
+  'images/shop-vase-moloko.png',
   'https://images.unsplash.com/photo-1687191883721-257d8cad5b54?auto=format&fit=crop&w=800&q=80',
   'https://images.unsplash.com/photo-1631125915902-d8abe9225ff2?auto=format&fit=crop&w=800&q=80',
   'https://images.squarespace-cdn.com/content/v1/60ddc9195bf01408d0b19f9c/282ca764-030c-4236-a24a-99aabab2c0fe/tom-crew-E64Hv5Ab_nQ-unsplash.jpg',
