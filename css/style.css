@@ -336,7 +336,8 @@
 .faq-list summary::after { content:'+'; float:right; color:var(--clay); font:400 25px var(--sans); }
 .faq-list details[open] summary::after { content:'−'; }
 .faq-list p { max-width:520px; margin:13px 35px 0 0; color:var(--muted); font-size:12px; }
-.contact-section { padding-top:30px; padding-bottom:95px; }
+.contact-section { padding-top:30px; padding-bottom:48px; }
+#contacts + .site-footer { padding-top:27px; }
 .contact-section .button { margin-top:16px; }
 .contact-card { display:grid; gap:14px; padding:35px; background:var(--dark); color:#fff; }
 .contact-card > span { color:#d5ad91; font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
