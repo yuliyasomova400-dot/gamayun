@@ -16,12 +16,12 @@ if (menuButton && navigation) {
   });
 }
 
-const studioHeroImage = 'https://assets.zyrosite.com/cdn-cgi/image/format%3Dauto%2Cw%3D1920%2Cfit%3Dcrop/A85q42BvQaHppbOR/atelier_sa-c-same_ambiance_5-mk38g83LMkfzqwEm.jpg';
+const studioHeroImage = 'images/hero-gamayun-studio-enhanced.png';
 try {
   const imageOverrides = JSON.parse(localStorage.getItem('gamayun-image-overrides')) || {};
   Object.entries(imageOverrides).forEach(([key, source]) => {
     const image = document.querySelector(`img[data-image-key="${key}"]`);
-    if (image && source) image.src = key === 'hero' && source.startsWith('data:image/') ? studioHeroImage : source;
+    if (image && source && !image.hasAttribute('data-studio-photo')) image.src = key === 'hero' ? studioHeroImage : key === 'corporate' ? 'images/corporate-workshop.png' : source;
   });
 } catch { /* The public site stays unchanged if browser storage is unavailable. */ }
 

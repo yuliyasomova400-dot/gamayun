@@ -19,6 +19,8 @@
 .card-content { width:100%; }
 .card-meta { display:flex; justify-content:space-between; gap:12px; margin-top:18px; padding-top:14px; border-top:1px solid #ffffff59; font-size:10px; letter-spacing:.35px; }
 .card-meta strong { font-size:11px; }
+.card-meta.card-meta-price-only { justify-content:flex-end; }
+.card-meta .card-price-options { text-align:right; line-height:1.8; }
 .card-actions { display:grid; grid-template-columns:1fr 1.35fr; gap:7px; margin-top:13px; }
 .card-actions a { display:flex; align-items:center; justify-content:center; min-height:37px; border:1px solid #ffffff9c; color:#fff; font-size:10px; font-weight:700; letter-spacing:.1px; transition:background .2s,color .2s; }
 .card-actions a:last-child { border-color:#fff; background:#fff; color:var(--ink); }
@@ -34,6 +36,7 @@
 .detail-facts span { display:block; margin-bottom:4px; color:var(--muted); font-size:9px; font-weight:700; letter-spacing:1px; text-transform:uppercase; }
 .detail-facts strong { font:500 21px var(--serif); }
 .detail-copy { max-width:510px; color:var(--muted); font-size:13px; }
+.details-card .lead p { margin-bottom:16px; }
 .details-photo { min-height:460px; height:100%; }
 @media (max-width:800px) { .direction-card { min-height:390px; } .details-page { width:min(100% - 32px, 600px); padding:36px 0 70px; } .details-card { grid-template-columns:1fr; padding:25px; } .details-photo { grid-row:1; min-height:320px; } }
 
@@ -312,6 +315,9 @@
 .booking-actions button:nth-child(2), .booking-actions button:nth-child(3) { color:#9c544d; }
 @media (max-width:600px) { .admin-booking { grid-template-columns:1fr; align-items:flex-start; } .admin-booking-contact { justify-items:start; text-align:left; } }
 .brand span { margin-top:3px; font-family:Manrope, Arial, sans-serif; font-size:10px; font-weight:700; font-style:normal!important; line-height:1; letter-spacing:1.6px; transform:skewX(0deg); }
+.brand { position:relative; padding-left:43px; min-height:54px; display:inline-flex; flex-direction:column; justify-content:center; flex-shrink:0; }
+.brand::before { content:""; position:absolute; left:0; top:50%; transform:translateY(-50%); width:32px; height:54px; background:url('../images/gamayun-mark.svg') center / contain no-repeat; }
+@media (max-width:480px) { .brand { padding-left:36px; min-height:46px; } .brand::before { width:27px; height:46px; } }
 .hero-copy > .eyebrow { transform:translateY(-9px); }
 .process-section { padding-top:60px; }
 .process-section > h2 { max-width:590px; margin-bottom:43px; }
@@ -365,6 +371,14 @@
 .cart-empty { padding:45px 0; text-align:center; }
 .cart-empty .button { margin-top:15px; }
 @media (min-width:801px) { .hero { min-height:min(760px, calc(100vh - 130px)); padding-bottom:40px; } .directions { padding-top:78px; } }
+/* Give the landscape photo more width and bring it closer to the copy. */
+.hero .hero-image { height:auto; min-height:0; aspect-ratio:1280 / 853; }
+.hero .hero-image img { object-fit:contain; }
+.hero .hero-image:hover img { transform:none; }
+@media (min-width:801px) {
+  .hero { width:min(1320px, calc(100% - 48px)); grid-template-columns:minmax(0, 1fr) minmax(0, 1.2fr); gap:clamp(28px, 3vw, 48px); }
+  .hero-copy { min-width:0; }
+}
 @media (max-width:600px) { .client-toolbar, .client-row { align-items:flex-start; flex-direction:column; } .client-status { justify-items:start; text-align:left; } }
 @media (max-width:800px) { .account-card { margin-top:25px; padding:27px; } .account-card h1 { font-size:39px; } }
 
@@ -426,6 +440,10 @@
 @media (max-width:1000px) { .product-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media (max-width:800px) { .shop-section { padding-top:15px; } .shop-heading { display:block; } .shop-intro { margin-top:16px; } .product-grid { gap:22px 12px; } .product-image { height:220px; } .product-card h3 { font-size:19px; } }
 
+/* Studio photos retain their complete square composition on every screen. */
+.direction-card:has(> img[data-studio-photo]) { grid-template-rows:auto auto !important; }
+.direction-card > img[data-studio-photo] { height:auto !important; aspect-ratio:1; object-fit:contain; }
+.direction-card:hover > img[data-studio-photo] { transform:none; }
 /* More room for the image: compact service cards without teaser copy */
 .direction-card { grid-template-rows:275px auto; }
 .direction-card img { height:275px; }
