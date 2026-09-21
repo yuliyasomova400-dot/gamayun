@@ -1,20 +1,8 @@
-const services = {
-  'vase': { title: 'Изготовление вазы', meta: 'Длительность уточняется в студии', price: 'от 7 000 ₽' },
-  'wheel-clay': { title: 'Круг + лепка', meta: 'Длительность уточняется в студии', price: '5 500 ₽' },
-  'ceramics-courses': { title: 'Курсы керамики', meta: 'Длительность уточняется в студии', price: 'от 10 000 ₽' },
-  'coworking': { title: 'Коворкинг', meta: 'Длительность уточняется в студии', price: 'от 2 500 ₽' },
-  wheel: { title: 'Гончарный круг', meta: 'Первое знакомство с кругом · 2 часа', price: 'от 2 500 ₽' },
-  handbuilding: { title: 'Ручная лепка', meta: 'Кружки, тарелки и личные формы · 2 часа', price: 'от 2 200 ₽' },
-  painting: { title: 'Роспись керамики', meta: 'Цвет, детали и готовая форма · 2 часа', price: 'от 1 800 ₽' },
-  date: { title: 'Свидание для двоих', meta: 'Гончарный круг или общее изделие руками · 2 часа', price: 'от 5 500 ₽' },
-  family: { title: 'Семейный подряд', meta: 'Для всей семьи за одним творческим столом · 2 часа', price: 'от 4 500 ₽' },
-  kids: { title: 'Детский мастер-класс', meta: 'Для маленьких авторов · 2 часа', price: 'от 1 600 ₽' },
-  course: { title: 'Время для девчонок!', meta: 'Каждую пятницу · ручная лепка, чай и разговоры · 2 часа', price: 'от 2 200 ₽' },
-  corporate: { title: 'Корпоративное занятие', meta: 'Творческий формат для команды · 2 часа', price: 'по запросу' }
-};
+const services = Object.fromEntries(window.studioServices.map(item => [item.id, { ...item, meta: [item.audience, item.duration].filter(Boolean).join(' · ') }]));
 
 const type = new URLSearchParams(location.search).get('type');
 const service = services[type] || services.wheel;
+if (!services[type] || !service.hours) location.replace('details.html?type=' + encodeURIComponent(type || 'wheel'));
 const today = new Date(); today.setHours(0, 0, 0, 0);
 const viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
 let selectedDate = null;
@@ -42,12 +30,12 @@ function hasActiveBooking(date, hour) {
     if (['Отменено', 'Оплата возвращена'].includes(booking.status)) return false;
     const bookingDate = new Date(booking.date);
     const duration = booking.duration || 2;
-    return sameDay(date, bookingDate) && hour >= booking.hour && hour < booking.hour + duration;
+    return sameDay(date, bookingDate) && hour < booking.hour + duration && hour + service.hours > booking.hour;
   });
 }
 function isBusy(date, hour) {
-  const demoBusy = busySlots.some(([offset, start, duration]) => { const busyDate = new Date(today); busyDate.setDate(today.getDate() + offset); return sameDay(date, busyDate) && hour >= start && hour < start + duration; });
-  return demoBusy || hasActiveBooking(date, hour);
+  const demoBusy = busySlots.some(([offset, start, duration]) => { const busyDate = new Date(today); busyDate.setDate(today.getDate() + offset); return sameDay(date, busyDate) && hour < start + duration && hour + service.hours > start; });
+  return hour + service.hours > 21 || demoBusy || hasActiveBooking(date, hour);
 }
 
 function renderDates() {
@@ -85,5 +73,5 @@ function renderTimes() {
 document.querySelector('#previous-month').addEventListener('click', () => { const previous = new Date(viewDate.getFullYear(), viewDate.getMonth() - 1, 1); if (previous >= new Date(today.getFullYear(), today.getMonth(), 1)) { viewDate.setMonth(viewDate.getMonth() - 1); renderDates(); } });
 document.querySelector('#next-month').addEventListener('click', () => { viewDate.setMonth(viewDate.getMonth() + 1); renderDates(); });
 slotDialog.addEventListener('click', (event) => { if (event.target === slotDialog) slotDialog.close(); });
-continueButton.addEventListener('click', () => { let client; try { client = JSON.parse(localStorage.getItem('gamayun-current-client')); } catch { client = null; } if (!client) { alert('Чтобы продолжить к оплате, войдите в личный кабинет.'); location.href = 'account.html'; return; } if (hasActiveBooking(selectedDate, selectedHour)) { alert('Это время только что заняли. Пожалуйста, выберите другой слот.'); selectedHour = null; selectedSlot.textContent = 'Выберите свободное время ниже'; continueButton.disabled = true; renderTimes(); return; } const bookings = readBookings(); const booking = { id: `booking-${Date.now()}`, email: client.email, service: service.title, price: service.price, date: selectedDate.toISOString(), hour: selectedHour, duration: 2, status: 'Не оплачено' }; bookings.unshift(booking); localStorage.setItem('gamayun-bookings', JSON.stringify(bookings)); location.href = `confirmation.html?booking=${booking.id}`; });
+continueButton.addEventListener('click', () => { let client; try { client = JSON.parse(localStorage.getItem('gamayun-current-client')); } catch { client = null; } if (!client) { alert('Чтобы продолжить к оплате, войдите в личный кабинет.'); location.href = 'account.html'; return; } if (hasActiveBooking(selectedDate, selectedHour)) { alert('Это время только что заняли. Пожалуйста, выберите другой слот.'); selectedHour = null; selectedSlot.textContent = 'Выберите свободное время ниже'; continueButton.disabled = true; renderTimes(); return; } const bookings = readBookings(); const booking = { id: `booking-${Date.now()}`, email: client.email, service: service.title, price: service.price, date: selectedDate.toISOString(), hour: selectedHour, duration: service.hours, status: 'Не оплачено' }; bookings.unshift(booking); localStorage.setItem('gamayun-bookings', JSON.stringify(bookings)); location.href = `confirmation.html?booking=${booking.id}`; });
 renderDates();
