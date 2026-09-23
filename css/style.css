@@ -442,7 +442,14 @@
 
 /* Studio photos retain their complete square composition on every screen. */
 .direction-card:has(> img[data-studio-photo]) { grid-template-rows:auto auto !important; }
-.direction-card > img[data-studio-photo] { height:auto !important; aspect-ratio:1; object-fit:contain; }
+.direction-card > img[data-studio-photo] { height:auto !important; aspect-ratio:1 / 1; object-fit:cover; object-position:center; }
+.direction-card > img[data-image-key="wheel"] { object-position:45% center; }
+.direction-card > img[data-image-key="wheel-clay"],
+.direction-card > img[data-image-key="vase"] { object-position:75% center; }
+.direction-card > img[data-image-key="kids"] { object-position:25% center; }
+.direction-card > img[data-image-key="date"] { object-position:center; }
+.direction-card > img[data-image-key="corporate"] { object-position:60% center; }
+.direction-card > img[data-image-key="kids-courses"] { object-position:40% center; }
 .direction-card:hover > img[data-studio-photo] { transform:none; }
 /* More room for the image: compact service cards without teaser copy */
 .direction-card { grid-template-rows:275px auto; }

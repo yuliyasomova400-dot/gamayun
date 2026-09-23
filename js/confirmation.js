@@ -4,7 +4,7 @@ const booking = bookings.find((item) => item.id === bookingId);
 let client; try { client = JSON.parse(localStorage.getItem('gamayun-current-client')); } catch { client = null; }
 if (!booking || !client) { location.replace('booking.html'); } else {
   const date = new Intl.DateTimeFormat('ru-RU', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(booking.date));
-  document.querySelector('#booking-review').innerHTML = `<div><span>Занятие</span><strong>${booking.service}</strong></div><div><span>Дата</span><strong>${date}</strong></div><div><span>Время</span><strong>${String(booking.hour).padStart(2, '0')}:00</strong></div><div><span>Адрес</span><strong>Коммунистическая 14, Смоленск</strong></div><div class="review-total"><span>К оплате</span><strong>${booking.price}</strong></div>`;
+  document.querySelector('#booking-review').innerHTML = `<div><span>Занятие</span><strong>${booking.service}</strong></div><div><span>Дата</span><strong>${date}</strong></div><div><span>Время</span><strong>${String(booking.hour).padStart(2, '0')}:00</strong></div><div><span>Адрес</span><strong>г. Смоленск, ул. Коммунистическая, 14</strong></div><div class="review-total"><span>К оплате</span><strong>${booking.price}</strong></div>`;
   document.querySelector('#pay-booking').innerHTML = `Оплатить ${booking.price} <span>→</span>`;
   const form = document.querySelector('#contact-details');
   form.elements.firstName.value = client.firstName || client.name || '';

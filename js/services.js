@@ -12,7 +12,7 @@ window.studioServices = [
       "Знакомство с глиной, работа с инструментами, освоение основных техник лепки, создание собственного изделия, декорирование цветными ангобами под руководством мастера.",
       "(глина, инструменты, ангобы, помощь мастера, обжиг)"
     ],
-    "image": "images/class-handbuilding.png",
+    "image": "images/approved-workshops/handbuilding.png",
     "requestOnly": false
   },
   {
@@ -27,7 +27,7 @@ window.studioServices = [
       "Знакомство с работой на гончарном круге с помощью мастера. Создайте собственное изделие- чашку, вазу или другую форму на выбор!",
       "(круг, глина, помощь мастера, обжиг)"
     ],
-    "image": "images/class-wheel.png",
+    "image": "images/approved-workshops/wheel-selected.png",
     "requestOnly": false
   },
   {
@@ -40,7 +40,7 @@ window.studioServices = [
     "description": [
       "Комбинированный формат: знакомство с работой на круге и ручной лепкой под руководством мастера. (круг, глина, инструменты, помощь мастера, обжиг)"
     ],
-    "image": "images/class-wheel-clay.png",
+    "image": "images/approved-workshops/wheel-clay.png",
     "requestOnly": false
   },
   {
@@ -54,7 +54,7 @@ window.studioServices = [
       "Создание более крупного изделия на гончарном круге с индивидуальной работой мастера, для тех, кто хочет больше времени уделить форме, деталям и индивидуальной работе с мастером.",
       "(круг, глина, помощь мастера, обжиг)"
     ],
-    "image": "images/class-vase.png",
+    "image": "images/approved-workshops/vase.png",
     "requestOnly": false
   },
   {
@@ -68,7 +68,7 @@ window.studioServices = [
       "Упрощённый мастер-класс по лепке для детей и взрослых.",
       "(глина, инструменты, помощь мастера, обжиг)"
     ],
-    "image": "images/class-kids.png",
+    "image": "images/approved-workshops/kids.png",
     "requestOnly": false
   },
   {
@@ -99,7 +99,7 @@ window.studioServices = [
       "Девичник, день рождения, корпоратив или просто встреча с друзьями — создайте свой праздник вместе с керамикой, общением и приятными эмоциями. Закрытое мероприятие с творческим мастер-классом.",
       "(глина, инструменты, работа мастера, обжиг)"
     ],
-    "image": "images/corporate-workshop.png",
+    "image": "images/approved-workshops/corporate.png",
     "requestOnly": false
   },
   {
@@ -112,7 +112,7 @@ window.studioServices = [
     "description": [
       "Роспись готового керамического изделия (глазурь, помощь мастера)"
     ],
-    "image": "images/class-painting.png",
+    "image": "images/approved-workshops/painting.png",
     "requestOnly": false
   },
   {
@@ -125,7 +125,7 @@ window.studioServices = [
     "description": [
       "Роспись готового керамического изделия (ангоба, помощь мастера)"
     ],
-    "image": "images/class-painting.png",
+    "image": "images/approved-workshops/painting-engobe.png",
     "requestOnly": false
   },
   {
@@ -138,7 +138,7 @@ window.studioServices = [
     "description": [
       "Серия занятий для системного освоения основных техник керамики (обучение, глина, инструменты, ангора, обжиг)"
     ],
-    "image": "images/class-ceramics-courses.png",
+    "image": "images/approved-workshops/ceramics-courses.png",
     "requestOnly": false
   },
   {
@@ -151,7 +151,7 @@ window.studioServices = [
     "description": [
       "Серия занятий для системного освоения основных техник керамики (обучение, глина, инструменты, ангора, обжиг)"
     ],
-    "image": "images/class-kids.png",
+    "image": "images/approved-workshops/kids-courses.png",
     "requestOnly": false
   },
   {
@@ -165,7 +165,7 @@ window.studioServices = [
       "Самостоятельная работа в студии с использованием доступного оборудования.",
       "(глина, инструменты, обжиг)"
     ],
-    "image": "images/class-coworking.png",
+    "image": "images/approved-workshops/coworking.png",
     "requestOnly": false
   },
   {
@@ -234,4 +234,3 @@ window.studioServices = [
     "requestOnly": true
   }
 ];
-

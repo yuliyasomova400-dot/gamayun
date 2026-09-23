@@ -16,6 +16,77 @@ if (menuButton && navigation) {
   });
 }
 
+const galleryImage = document.querySelector('#studio-gallery-main');
+const galleryButtons = [...document.querySelectorAll('.studio-thumbnails button[aria-pressed]')];
+const studioPhotos = [
+  ['images/studio-gallery/sign.png', 'Гамаюн — керамическая студия'],
+  ['images/studio-gallery/ceramics.png', 'Цветы в керамической вазе'],
+  ['images/studio-gallery/pots.png', 'Керамика в подсвеченных нишах'],
+  ['images/studio-gallery/paints.png', 'Краски и образцы покрытий'],
+  ['images/studio-gallery/tools.png', 'Инструменты для творчества'],
+  ['images/studio-gallery/relief.png', 'Ботанический рельеф'],
+  ['images/studio-gallery/interior.png', 'Интерьер студии'],
+  ['images/studio-gallery/mirror.png', 'Зеркало с керамическим декором'],
+  ['images/studio-gallery/workshop.png', 'Занятие в студии']
+];
+const studioDialog = document.querySelector('#studio-lightbox');
+if (galleryImage && studioDialog) {
+  let selectedPhoto = 0;
+  let previousOverflow = '';
+  const largeImage = document.querySelector('#studio-lightbox-image');
+  const strip = studioDialog.querySelector('.lightbox-thumbnails');
+  const fullButtons = studioPhotos.map(([src, alt], index) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.setAttribute('aria-label', alt);
+    const img = document.createElement('img');
+    img.src = src; img.alt = ''; img.loading = 'lazy';
+    button.append(img);
+    button.addEventListener('click', () => selectPhoto(index));
+    strip.append(button);
+    return button;
+  });
+  function selectPhoto(index) {
+    selectedPhoto = (index + studioPhotos.length) % studioPhotos.length;
+    const [src, alt] = studioPhotos[selectedPhoto];
+    galleryImage.src = src; galleryImage.alt = alt;
+    largeImage.src = src; largeImage.alt = alt;
+    galleryButtons.forEach((button, i) => button.setAttribute('aria-pressed', String(i === selectedPhoto)));
+    fullButtons.forEach((button, i) => button.setAttribute('aria-pressed', String(i === selectedPhoto)));
+    document.querySelector('#studio-photo-count').textContent = (selectedPhoto + 1) + ' / ' + studioPhotos.length;
+    document.querySelector('#studio-photo-caption').textContent = alt;
+    document.querySelector('#studio-gallery-status').textContent = alt;
+    if (studioDialog.open) fullButtons[selectedPhoto].scrollIntoView({block:'nearest', inline:'nearest'});
+  }
+  function openGallery() {
+    selectPhoto(selectedPhoto);
+    previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    studioDialog.showModal();
+  }
+  galleryButtons.forEach((button, index) => button.addEventListener('click', () => selectPhoto(index)));
+  document.querySelector('.studio-gallery-more').addEventListener('click', openGallery);
+  document.querySelector('.studio-gallery-open').addEventListener('click', openGallery);
+  studioDialog.querySelector('.lightbox-close').addEventListener('click', () => studioDialog.close());
+  studioDialog.addEventListener('close', () => { document.body.style.overflow = previousOverflow; });
+  studioDialog.querySelector('.lightbox-prev').addEventListener('click', () => selectPhoto(selectedPhoto - 1));
+  studioDialog.querySelector('.lightbox-next').addEventListener('click', () => selectPhoto(selectedPhoto + 1));
+  studioDialog.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault();
+      selectPhoto(selectedPhoto + (event.key === 'ArrowRight' ? 1 : -1));
+    }
+  });
+  let touchStartX = null;
+  largeImage.addEventListener('touchstart', (event) => { touchStartX = event.changedTouches[0].clientX; }, {passive:true});
+  largeImage.addEventListener('touchend', (event) => {
+    const delta = event.changedTouches[0].clientX - touchStartX;
+    if (touchStartX !== null && Math.abs(delta) > 50) selectPhoto(selectedPhoto + (delta < 0 ? 1 : -1));
+    touchStartX = null;
+  }, {passive:true});
+  selectPhoto(0);
+}
+
 const studioHeroImage = 'images/hero-gamayun-studio-enhanced.png';
 try {
   const imageOverrides = JSON.parse(localStorage.getItem('gamayun-image-overrides')) || {};
