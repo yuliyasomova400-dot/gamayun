@@ -40,7 +40,7 @@ window.studioServices = [
     "description": [
       "Комбинированный формат: знакомство с работой на круге и ручной лепкой под руководством мастера. (круг, глина, инструменты, помощь мастера, обжиг)"
     ],
-    "image": "images/approved-workshops/wheel-clay.png",
+    "image": "images/approved-workshops/wheel-clay-full.png",
     "requestOnly": false
   },
   {
@@ -84,7 +84,7 @@ window.studioServices = [
       "8 500 (глина, инструменты, глазурь, помощь мастера, обжиг)",
       "11 000 (глина, инструменты, глазурь, помощь мастера, обжиг, романтическая обстановка)"
     ],
-    "image": "images/class-date.png",
+    "image": "images/approved-workshops/date-heart-light.png",
     "requestOnly": false
   },
   {
@@ -112,7 +112,7 @@ window.studioServices = [
     "description": [
       "Роспись готового керамического изделия (глазурь, помощь мастера)"
     ],
-    "image": "images/approved-workshops/painting.png",
+    "image": "images/approved-workshops/painting-bowl.png",
     "requestOnly": false
   },
   {
@@ -138,7 +138,7 @@ window.studioServices = [
     "description": [
       "Серия занятий для системного освоения основных техник керамики (обучение, глина, инструменты, ангора, обжиг)"
     ],
-    "image": "images/approved-workshops/ceramics-courses.png",
+    "image": "images/approved-workshops/ceramics-courses-group.png",
     "requestOnly": false
   },
   {

@@ -22,6 +22,7 @@ if (!detail) {
   document.querySelector('.detail-copy').hidden = true;
   document.querySelector('#detail-image').src = detail.image;
   document.querySelector('#detail-image').alt = detail.title;
+  if (detail.id === 'wheel-clay') document.querySelector('#detail-image').style.objectFit = 'contain';
   const book = document.querySelector('#detail-book');
   book.href = detail.hours ? 'calendar.html?type=' + detail.id : 'tel:+79203214400';
   if (!detail.hours) book.textContent = 'Уточнить в студии';
